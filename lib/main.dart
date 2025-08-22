@@ -1,40 +1,45 @@
-import 'package:ai_closet_flutter/features/common/bottom_navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:clerk_flutter/clerk_flutter.dart';
+import 'core/theme/app_theme.dart';
+import 'core/providers/router_provider.dart';
+import 'core/services/storage/hive_service.dart';
+import 'core/services/ai/openai_service.dart';
 
-Future<void> main() async {
-  await GetStorage.init();
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize Hive
+  await Hive.initFlutter();
+  await HiveService.init();
+  
+  // Initialize Clerk (replace with your Clerk publishable key)
+  await Clerk.initialize(
+    publishableKey: const String.fromEnvironment(
+      'CLERK_PUBLISHABLE_KEY',
+      defaultValue: 'pk_test_YOUR_KEY_HERE',
+    ),
+  );
+  
+  // Initialize OpenAI
+  OpenAIService.initialize();
+  
+  runApp(const ProviderScope(child: ClosiApp()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ClosiApp extends ConsumerWidget {
+  const ClosiApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
+    
+    return MaterialApp.router(
       title: 'Closi',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const BottomNavBar(),
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
+      routerConfig: router,
     );
   }
 }
