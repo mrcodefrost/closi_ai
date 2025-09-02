@@ -20,7 +20,6 @@ class MyClosetScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Color(0xfffbfaf6),
       appBar: NestedAppBar(title: NestedAppBarTitles.myCloset),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5),

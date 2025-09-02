@@ -17,7 +17,7 @@ class NestedAppBar extends StatelessWidget implements PreferredSizeWidget {
     Widget refreshIcon = const SizedBox.shrink();
     double iconSize = 25;
     Color iconColor = Colors.black;
-    bool backButton = false;
+    // bool backButton = false;
 
     switch (title) {
       case NestedAppBarTitles.profile:
@@ -59,10 +59,6 @@ class NestedAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       backgroundColor: Color(0xfffbfaf6),
       automaticallyImplyLeading: false,
-      titleSpacing: backButton
-          ? 5
-          : 20, // Todo : set padding 20 for main screens
-      leading: backButton ? null : null,
       actions: [refreshIcon, firstActionIcon],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1.0),

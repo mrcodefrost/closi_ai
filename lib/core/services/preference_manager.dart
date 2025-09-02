@@ -5,6 +5,7 @@ class PreferenceManager {
 
   // Keys
   static const String token = "token";
+  static const String keyIsDarkMode = "keyIsDarkMode";
 
   // Write
   static Future<void> setData(String key, dynamic value) async =>
