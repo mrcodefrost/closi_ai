@@ -1,0 +1,118 @@
+import 'package:ai_closet_flutter/core/theme/color_constants.dart';
+import 'package:ai_closet_flutter/features/common/buttons/primary_button.dart';
+import 'package:ai_closet_flutter/features/common/custom_text_form_field.dart';
+import 'package:ai_closet_flutter/routes/app_routes.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class PersonalizationNameScreen extends StatelessWidget {
+  const PersonalizationNameScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 100),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.5,
+              child: Text(
+                'Welcome to your closet.',
+                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Let\'s personalize your wardrobe experience.',
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge!.copyWith(color: TextColor.lightBlack),
+            ),
+            const SizedBox(height: 50),
+            Text(
+              'Preferred name (optional)',
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 5),
+            CustomTextFormField(hintText: 'What should we call you?'),
+            const SizedBox(height: 25),
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: BorderColor.paleBrown),
+                color: BackgroundColor.offWhite,
+              ),
+              child: Row(
+                children: [
+                  CupertinoSwitch(value: false, onChanged: (val) {}),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 10,
+                      children: [
+                        Text(
+                          'Use my name in the app',
+                          style: Theme.of(context).textTheme.bodyLarge!
+                              .copyWith(fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          'We\'ll personalize your experience with your name.',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 35),
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: BorderColor.paleBrown),
+                color: BackgroundColor.darkCream,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.lightbulb_outline,
+                    color: IconColor.brown,
+                    size: 30,
+                  ),
+                  const SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      'Your name helps us create personalized styling suggestions and makes the app feel more welcoming.',
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: TextColor.lightBlack,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 35),
+            PrimaryButton(
+              width: double.maxFinite,
+              text: 'Continue',
+              onPressed: () {
+                Get.toNamed(AppRoutes.personalizationGender);
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
