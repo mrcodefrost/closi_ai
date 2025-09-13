@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 class TextColor {
   static const Color white = Color(0xffFFFFFF);
   static const Color black = Color(0xff000000);
-  static const Color lightBlack = Color(0xff2F2F2F);
+  static const Color lightBlack = Color(0xffA6A29C);
   static const Color camelBrown = Color(0xffD2957F);
 }
 
 class IconColor {
   static const Color white = Color(0xffFFFFFF);
   static const Color black = Color(0xff000000);
-  static const Color grey = Color(0xff7C7B89);
-  static const Color brown = Color(0xffC97D63);
+  static const Color lightBlack = Color(0xffA6A29C);
+  static const Color brown = Color(0xffCDA77B);
+  static const Color offWhite = Color(0xffFEFCFA);
   static const Color lightBrown = Color(0xffF1EADF);
   static const Color camelBrown = Color(0xffD2957F);
 }
@@ -19,7 +20,9 @@ class IconColor {
 class ButtonColor {
   static const Color white = Color(0xffFFFFFF);
   static const Color black = Color(0xff000000);
+  static const Color brown = Color(0xffCDA77B);
   static const Color lightCream = Color(0xffFAF7F3);
+  static const Color offWhite = Color(0xffFEFCFA);
   static const Color red = Color(0xffF03A17);
 }
 
@@ -33,7 +36,9 @@ class BorderColor {
 class BackgroundColor {
   static const Color white = Color(0xffFFFFFF);
   static const Color black = Color(0xff000000);
-  static const Color cream = Color(0xffF9F5F0);
+  static const Color cream = Color(0xffF9F6F2);
+  static const Color offWhite = Color(0xffFEFCFA);
+  static const Color darkCream = Color(0xffF3EFEA);
 }
 
 class BottomNavbarColor {

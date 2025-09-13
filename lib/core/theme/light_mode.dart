@@ -5,15 +5,15 @@ import 'color_constants.dart';
 
 const ColorScheme lightColorScheme = ColorScheme.light(
   surface: BackgroundColor.cream, // lightest // done
-  primary: TextColor.lightBlack, // for text (say) // done
-  secondary: TextColor.lightBlack, // 4th // done
-  tertiary: TextColor.lightBlack, // same for both modes // done
-  inversePrimary: TextColor.lightBlack, // darkest
+  primary: TextColor.black, // for text (say) // done
+  secondary: TextColor.black, // 4th // done
+  tertiary: TextColor.black, // same for both modes // done
+  inversePrimary: TextColor.black, // darkest
   primaryFixed: BorderColor.brown, // done
-  primaryFixedDim: TextColor.lightBlack,
-  secondaryFixed: TextColor.lightBlack,
-  secondaryFixedDim: TextColor.lightBlack,
-  tertiaryFixed: TextColor.lightBlack,
+  primaryFixedDim: TextColor.black,
+  secondaryFixed: TextColor.black,
+  secondaryFixedDim: TextColor.black,
+  tertiaryFixed: TextColor.black,
 );
 
 ThemeData lightMode = ThemeData(
@@ -112,12 +112,12 @@ ThemeData lightMode = ThemeData(
   inputDecorationTheme: InputDecorationTheme(
     hintStyle: TextStyle(
       fontFamily: GoogleFonts.publicSans().fontFamily,
-      color: TextColor.lightBlack,
+      color: TextColor.black,
       fontSize: 18,
     ),
     errorStyle: TextStyle(color: ErrorColor.red, fontSize: 12),
     errorMaxLines: 4,
-    fillColor: BackgroundColor.white,
+    fillColor: BackgroundColor.offWhite,
     contentPadding: EdgeInsets.all(10),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
