@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'features/auth/views/sign_up_screen.dart';
+import 'routes/app_pages.dart';
+import 'routes/app_routes.dart';
 
 Future<void> main() async {
   await GetStorage.init();
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Closi',
       theme: lightMode,
-      home: const SignUpScreen(),
+      initialRoute: AppRoutes.splash,
+      getPages: AppPages.routes,
     );
   }
 }

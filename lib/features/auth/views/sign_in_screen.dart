@@ -1,13 +1,11 @@
+import 'package:ai_closet_flutter/core/theme/color_constants.dart';
 import 'package:ai_closet_flutter/features/common/buttons/primary_button.dart';
-import 'package:ai_closet_flutter/routes/app_routes.dart';
+import 'package:ai_closet_flutter/features/common/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/theme/color_constants.dart';
-import '../../common/custom_text_form_field.dart';
-
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +51,12 @@ class SignUpScreen extends StatelessWidget {
                 suffixIcon: Icon(Icons.visibility, color: IconColor.lightBlack),
               ),
               const SizedBox(height: 30),
-              Text(
-                'By creating an account, you agree to our Terms and Privacy Policy.',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              const SizedBox(height: 30),
+
               PrimaryButton(
                 width: double.maxFinite,
-                text: 'Sign Up',
+                text: 'Sign In',
                 onPressed: () {
-                  Get.toNamed(AppRoutes.personalizationName);
+                  // Get.to(WelcomeHome());
                 },
               ),
               const SizedBox(height: 30),
@@ -94,9 +88,9 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(height: 30),
               TextButton(
                 onPressed: () {
-                  Get.toNamed(AppRoutes.signIn);
+                  Get.back();
                 },
-                child: Text('Already have an account? Sign In here.'),
+                child: Text('Don\'t have an account? Sign Up here.'),
               ),
             ],
           ),
