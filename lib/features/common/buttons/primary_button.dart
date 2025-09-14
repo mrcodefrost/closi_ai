@@ -23,6 +23,7 @@ class PrimaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero,
           backgroundColor: ButtonColor.brown,
+          foregroundColor: ButtonColor.white,
           textStyle: Theme.of(
             context,
           ).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w700),
