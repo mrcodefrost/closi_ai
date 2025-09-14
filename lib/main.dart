@@ -1,3 +1,4 @@
+import 'package:ai_closet_flutter/core/bindings/app_bindings.dart';
 import 'package:ai_closet_flutter/core/theme/light_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,6 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: lightMode,
       initialRoute: AppRoutes.splash,
       getPages: AppPages.routes,
+      initialBinding: AppBindings(),
     );
   }
 }
