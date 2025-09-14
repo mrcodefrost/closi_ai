@@ -10,4 +10,14 @@ abstract class AppRoutes {
   static const String personalizationClimate = '/personalizationClimate';
   static const String personalizationPrivacy = '/personalizationPrivacy';
   static const String home = '/home';
+  static const String addItem = '/addItem';
+  static const String manualEntry = '/manualEntry';
+  static const String batchTagging = '/batchTagging';
+  static const String closet = '/closet';
+  static const String profile = '/profile';
+  static const String analytics = '/analytics';
+  static const String calendar = '/calendar';
+  static const String mixer = '/mixer';
+  static const String stylist = '/stylist';
+  static const String trialRoom = '/trialRoom';
 }
