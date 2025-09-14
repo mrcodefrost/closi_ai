@@ -1,6 +1,7 @@
 import 'package:ai_closet_flutter/core/theme/color_constants.dart';
 import 'package:ai_closet_flutter/features/common/buttons/primary_button.dart';
 import 'package:ai_closet_flutter/features/common/custom_text_form_field.dart';
+import 'package:ai_closet_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -56,7 +57,7 @@ class SignInScreen extends StatelessWidget {
                 width: double.maxFinite,
                 text: 'Sign In',
                 onPressed: () {
-                  // Get.to(WelcomeHome());
+                  Get.toNamed(AppRoutes.home);
                 },
               ),
               const SizedBox(height: 30),
@@ -77,13 +78,17 @@ class SignInScreen extends StatelessWidget {
               PrimaryButton(
                 width: double.maxFinite,
                 text: 'Continue with Google',
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.home);
+                },
               ),
               const SizedBox(height: 30),
               PrimaryButton(
                 width: double.maxFinite,
                 text: 'Continue with Apple',
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.home);
+                },
               ),
               const SizedBox(height: 30),
               TextButton(

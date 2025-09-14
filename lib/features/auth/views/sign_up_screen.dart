@@ -83,13 +83,17 @@ class SignUpScreen extends StatelessWidget {
               PrimaryButton(
                 width: double.maxFinite,
                 text: 'Continue with Google',
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.home);
+                },
               ),
               const SizedBox(height: 30),
               PrimaryButton(
                 width: double.maxFinite,
                 text: 'Continue with Apple',
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.home);
+                },
               ),
               const SizedBox(height: 30),
               TextButton(
