@@ -22,6 +22,8 @@ class ButtonColor {
   static const Color black = Color(0xff000000);
   static const Color brown = Color(0xffCDA77B);
   static const Color lightCream = Color(0xffFAF7F3);
+  static const Color darkBrown = Color(0xffB58B7D);
+  static const Color fadedBrown = Color(0xffE6DDD5);
   static const Color offWhite = Color(0xffFEFCFA);
   static const Color red = Color(0xffF03A17);
 }
@@ -59,6 +61,15 @@ class DividerColor {
   static const Color white = Color(0xffFFFFFF);
   static const Color black = Color(0xff000000);
   static const Color brown = Color(0xffC97D63);
+}
+
+class ShadowColor {
+  static const Color black26 = Colors.black26;
+}
+
+class SplashColor {
+  static const Color fadedBrown = Color(0xffE6DDD5);
+  static const Color brown = Color(0xffCDA77B);
 }
 
 class Carousel {}
