@@ -29,7 +29,9 @@ class HomeScreen extends StatelessWidget {
             shape: const CircleBorder(),
             child: InkWell(
               customBorder: const CircleBorder(), // ripple shape
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.profile);
+              },
               child: Icon(Icons.person, size: 23, color: IconColor.white),
             ),
           ),
@@ -37,7 +39,9 @@ class HomeScreen extends StatelessWidget {
 
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              return _showMenuBottomSheet(context);
+            },
             icon: Icon(Icons.menu, size: 25, color: IconColor.brown),
           ),
         ],
@@ -158,7 +162,9 @@ class HomeScreen extends StatelessWidget {
                   ElevatedSquareButton(
                     icon: Icons.add,
                     text: 'Open Closet',
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.closet);
+                    },
                   ),
                   ElevatedSquareButton(
                     icon: Icons.add,
@@ -264,4 +270,67 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showMenuBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+    ),
+    backgroundColor: BackgroundColor.cream,
+    builder: (context) {
+      return Padding(
+        padding: const EdgeInsets.all(20),
+        child: Wrap(
+          spacing: 20,
+          runSpacing: 20,
+          children: [
+            ElevatedSquareButton(
+              icon: Icons.calendar_month,
+              text: 'Calendar',
+              onPressed: () {
+                Get.toNamed(AppRoutes.calendar);
+              },
+            ),
+            ElevatedSquareButton(
+              icon: Icons.multiline_chart,
+              text: 'Analytics',
+              onPressed: () {
+                Get.toNamed(AppRoutes.analytics);
+              },
+            ),
+            ElevatedSquareButton(
+              icon: Icons.shuffle,
+              text: 'Mixer',
+              onPressed: () {
+                Get.toNamed(AppRoutes.mixer);
+              },
+            ),
+            ElevatedSquareButton(
+              icon: Icons.psychology,
+              text: 'Stylist',
+              onPressed: () {
+                Get.toNamed(AppRoutes.stylist);
+              },
+            ),
+            ElevatedSquareButton(
+              icon: Icons.checkroom,
+              text: 'Trial Room',
+              onPressed: () {
+                Get.toNamed(AppRoutes.trialRoom);
+              },
+            ),
+            ElevatedSquareButton(
+              icon: Icons.settings,
+              text: 'Settings',
+              onPressed: () {
+                Get.toNamed(AppRoutes.profile);
+              },
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }
